@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import NavBar from "../components/NavBar";
+// import { Link } from "react-router-dom";
+import LandingHero from "../components/LandingHero";
 
 function Landing() {
     return (
         <>
-        <div>Testing</div>
+        <LandingHero />
         </>
     )
 }
