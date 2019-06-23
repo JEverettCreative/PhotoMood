@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Get Inspired",
+        "image": "./Imgs/jonsnow.jpg",
+        "info": "Get inspired. Peruse or search through professional photos or other users' public galleries."
+    },
+    {
+        "id": 2,
+        "title": "Assemble Your Vision",
+        "image": "./Imgs/dany.jpg",
+        "info": "Build a flexible mood board to visualize your upcoming project. Drag & drop, resize, and add notes to each image."
+    },
+    {
+        "id": 3,
+        "title": "Plan Your Shoot",
+        "image": "./Imgs/arya.jpg",
+        "info": "Build equipment, prop, and wardrobe lists with your board. Set your goal date and reminders to keep you on track."
+    },
+    {
+        "id": 4,
+        "title": "Share Your Work",
+        "image": "./Imgs/cersei.jpg",
+        "info": "Share your completed vision with other photographers in your own gallery. Add links from your gallery to your social platforms to promote your work further."
+    }
+]
