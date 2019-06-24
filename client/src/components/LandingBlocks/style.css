@@ -1,0 +1,8 @@
+.landing-info {
+    display: inline-block;
+}
+
+.block-container {
+    margin: auto;
+    display: flex;
+}
