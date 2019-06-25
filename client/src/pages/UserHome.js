@@ -20,7 +20,7 @@ class UserHome extends Component {
         <div>
             <NavBar>
                 <Button style={{ display: "inline" }}>
-                    Account
+                    <span><i class="fas fa-user fa-lg"></i></span>
                 </Button>
             </NavBar>
             <div className="row">
@@ -33,6 +33,7 @@ class UserHome extends Component {
                         avatar={Dummy.avatar}
                         />
                     ))}
+                    {/* Need to return and add appropriate text here. This text belongs in Mood Board page later */}
                     <SideTaskBarNew>
                         <FormListItem 
                         text="Prop List"/>
@@ -42,24 +43,25 @@ class UserHome extends Component {
                         text="Wardrobe List"/>
                     </SideTaskBarNew> 
                 </div>
+                {/* Need to return and rename these titles appropriately, add more styling */}
                 <div className="col-md-8" style={{ padding: 0 }}>
-                     <div className="row" style={{ margin: 0 }}>
+                     <div className="row-fluid d-flex" style={{ margin: 0 }}>
                         <CategoryButton
-                            backgroundImage="./Imgs/Landing_InfoRight_1.png"
+                            
                             title="Current Projects"
                             />
                             <CategoryButton
-                            backgroundImage="./Imgs/Landing_InfoRight_1.png"
+                            
                             title="Albums"
                             />
                     </div>
-                    <div className="row" style={{ margin: "0 auto" }}>
+                    <div className="row-fluid d-flex" style={{ margin: "0 auto" }}>
                     <CategoryButton
-                            backgroundImage="./Imgs/Landing_InfoRight_1.png"
+                           
                             title="Current Projects"
                             />
                             <CategoryButton
-                            backgroundImage="./Imgs/Landing_InfoRight_1.png"
+                            
                             title="Albums"
                             />
                     </div>    

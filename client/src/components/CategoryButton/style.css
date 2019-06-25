@@ -1,8 +1,9 @@
 .category {
-    background-size: contain;
-    background-repeat: no-repeat;
+   
+    background-color: #66E890;
+    color: #444;
     overflow: hidden;
-    width: 400px;
     height: 300px;
-    padding: 0;
+    padding: 5%;
+    margin: 0.5rem;
 }

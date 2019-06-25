@@ -3,7 +3,7 @@ import "./style.css";
 
 function CategoryButton(props) {
     return (
-        <div className="container col-md-6 col-sm-12 text-center category" style={{ backgroundImage: `url(${props.backgroundImage})` }}>
+        <div className="w-50 text-center category">
             <h2>{props.title}</h2>
         </div>
     )
