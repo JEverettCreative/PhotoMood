@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function Row(props){
+function LandingRow(props){
     return (
         <div className="row block-container" {...props}>
             {props.children}
@@ -9,4 +9,4 @@ function Row(props){
     )
 }
 
-export default Row;
+export default LandingRow;
