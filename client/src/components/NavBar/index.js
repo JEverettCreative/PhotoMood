@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import Button from "../Button";
 
-function NavBar() {
+
+function NavBar(props) {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -60,11 +61,7 @@ function NavBar() {
                         Your Gallery
                         </Link>
                     </li>
-                    <form className="form-inline">
-                        <Button>
-                            Login
-                        </Button>
-                    </form>
+                    {props.children}
                 </ul>
                 
             </div>

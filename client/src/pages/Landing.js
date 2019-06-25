@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import LandingHero from "../components/LandingHero";
 import { LandingInfo, LandingImage } from "../components/LandingBlocks";
@@ -11,7 +10,11 @@ class Landing extends Component {
     render () {
         return (
             <>
-            <NavBar />
+            <NavBar>
+                <Button style={{ display: "inline" }}>
+                    Login
+                </Button>
+            </NavBar> 
             <LandingHero />
             <Row>
                 <LandingImage>
