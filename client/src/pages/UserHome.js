@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import NavBar from "../components/NavBar";
-import Wrapper from "../components/Wrapper";
 import Button from "../components/Button";
 import Avatar from "../components/Avatar";
 import Dummy from "../dummyaccount.json";
 import { SideTaskBarNew, FormListItem } from "../components/SideTaskBar";
-import CategoryButton from "../components/CategoryButton";
+import { UserHomeCategory } from "../components/CategoryButtons";
 
 
 class UserHome extends Component {
@@ -46,21 +45,21 @@ class UserHome extends Component {
                 {/* Need to return and rename these titles appropriately, add more styling */}
                 <div className="col-md-8" style={{ padding: 0 }}>
                      <div className="row-fluid d-flex" style={{ margin: 0 }}>
-                        <CategoryButton
+                        <UserHomeCategory
                             
                             title="Current Projects"
                             />
-                            <CategoryButton
+                            <UserHomeCategory
                             
                             title="Albums"
                             />
                     </div>
                     <div className="row-fluid d-flex" style={{ margin: "0 auto" }}>
-                    <CategoryButton
+                    <UserHomeCategory
                            
                             title="Current Projects"
                             />
-                            <CategoryButton
+                            <UserHomeCategory
                             
                             title="Albums"
                             />

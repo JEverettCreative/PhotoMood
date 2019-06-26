@@ -15,9 +15,9 @@ function NavBar(props) {
                 <ul className="navbar-nav">
                     <li className="nav-item">
                         <Link
-                        to="/newproject"
+                        to="/createproject"
                         className={
-                            window.location.pathname === "/" || window.location.pathname === "/newproject"
+                            window.location.pathname === "/" || window.location.pathname === "/createproject"
                             ? "nav-link active"
                             : "nav-link"
                         }

@@ -4,6 +4,7 @@ import Landing from "./pages/Landing";
 import UserHome from "./pages/UserHome";
 import Wrapper from "./components/Wrapper";
 import "./App.css";
+import CreateProject from "./pages/CreateProject";
 
 class App extends Component {
   render() {
@@ -14,8 +15,8 @@ class App extends Component {
          <Wrapper>
            <Route exact path="/" component={Landing} />
            <Route exact path="/userhome" component={UserHome} />
-               {/* <Route exact path="/about" component={About} />
-               <Route exact path="/discover" component={Discover} /> */}
+           <Route exact path="/createproject" component={CreateProject} />
+               {/*<Route exact path="/discover" component={Discover} /> */}
 
          </Wrapper>
        </div>
