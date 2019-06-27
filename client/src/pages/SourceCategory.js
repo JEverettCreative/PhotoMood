@@ -6,12 +6,12 @@ import { ImageSourceCategory } from "../components/CategoryButtons";
 import BannerSmall from "../components/BannerSmall";
 import { Desktop, Tablet, Mobile, Default } from "../utils/mediaqueries";
 
-class CreateProject extends Component {
+
+class SourceCategory extends Component {
 
     state = {
         Dummy
     }
-
 
     render() {
         return (
@@ -31,64 +31,58 @@ class CreateProject extends Component {
                         {/* Button 1 */}
                         <Desktop>
                             <ImageSourceCategory 
-                                backgroundImage="./Imgs/Landing_InfoRight_1.png"
-                                title="Get Inspired"
-                                info="Filter through professional photos by category for your mood board."
+                                backgroundImage="./Imgs/SourceCategory/portrait_4x6.jpg"
+                                title="Portraits"
                                 />
                         </Desktop>
                         <Tablet>
                             <ImageSourceCategory 
-                                backgroundImage="./Imgs/Tablet_Img_Placeholder.png"
-                                title="Get Inspired"
-                                info="Filter through professional photos by category for your mood board."
+                                backgroundImage="./Imgs/SourceCategory/portrait_1x1.jpg"
+                                title="Portraits"
                                 />
                         </Tablet>
                         {/* Single col, but with react-responsive options */}
                         {/* Button 2 */}
                         <Desktop>
                             <ImageSourceCategory 
-                                backgroundImage="./Imgs/Landing_InfoRight_1.png"
-                                title="Keyword Search"
-                                info="Search professional photos for your mood board using specific keywords."
+                                backgroundImage="./Imgs/SourceCategory/landscape_4x6.jpg"
+                                title="Landscapes"
                                 />
                         </Desktop>
                         <Tablet>
                             <ImageSourceCategory 
-                                backgroundImage="./Imgs/Tablet_Img_Placeholder.png"
-                                title="Keyword Search"
-                                info="Search professional photos for your mood board using specific keywords."
+                                backgroundImage="./Imgs/SourceCategory/landscape_1x1.jpg"
+                                title="Landscapes"
                                 />
                         </Tablet>
+                    
+                    
                         {/* Single col, but with react-responsive options */}
                         {/* Button 3 */}
                         <Desktop>
                             <ImageSourceCategory 
-                                backgroundImage="./Imgs/Landing_InfoRight_1.png"
-                                title="Explore Albums"
-                                info="Find work from fellow PhotoMood photographers that you admire, then link them to your mood board."
+                                backgroundImage="./Imgs/SourceCategory/creative_concept_4x6.jpg"
+                                title="Creative Concept"
                                 />
                         </Desktop>
                         <Tablet>
                             <ImageSourceCategory 
-                                backgroundImage="./Imgs/Tablet_Img_Placeholder.png"
-                                title="Explore Albums"
-                                info="Find work from fellow PhotoMood photographers that you admire, then link them to your mood board."
+                                backgroundImage="./Imgs/SourceCategory/creative_concept_1x1.jpg"
+                                title="Creative Concept"
                                 />
                         </Tablet>
                         {/* Single col, but with react-responsive options for image size */}
                         {/* Button 4 */}
                         <Desktop>
                             <ImageSourceCategory 
-                                backgroundImage="./Imgs/Landing_InfoRight_1.png"
-                                title="Upload Media"
-                                info="Already have images that inspire your vision? Upload them to your new mood board here."
+                                backgroundImage="./Imgs/SourceCategory/fashion_4x6.jpg"
+                                title="Fashion"
                                 />
                         </Desktop>
                         <Tablet>
                             <ImageSourceCategory 
-                                backgroundImage="./Imgs/Tablet_Img_Placeholder.png"
-                                title="Upload Media"
-                                info="Already have images that inspire your vision? Upload them to your new mood board here."
+                                backgroundImage="./Imgs/SourceCategory/fashion_1x1.jpg"
+                                title="Fashion"
                                 />
                         </Tablet>
                     </div>
@@ -98,4 +92,4 @@ class CreateProject extends Component {
     }
 }
 
-export default CreateProject;
+export default SourceCategory;

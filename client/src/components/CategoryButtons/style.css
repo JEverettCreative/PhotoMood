@@ -10,9 +10,12 @@
 
 .img-source {
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     height: 400px;
     padding-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     color: #ddd;
+    margin: 0 auto;
 }
 

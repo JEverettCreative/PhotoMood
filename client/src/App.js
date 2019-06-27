@@ -5,6 +5,7 @@ import UserHome from "./pages/UserHome";
 import Wrapper from "./components/Wrapper";
 import "./App.css";
 import CreateProject from "./pages/CreateProject";
+import SourceCategory from "./pages/SourceCategory";
 
 class App extends Component {
   render() {
@@ -16,7 +17,7 @@ class App extends Component {
            <Route exact path="/" component={Landing} />
            <Route exact path="/userhome" component={UserHome} />
            <Route exact path="/createproject" component={CreateProject} />
-               {/*<Route exact path="/discover" component={Discover} /> */}
+           <Route exact path="/sourcecategory" component={SourceCategory} />
 
          </Wrapper>
        </div>
