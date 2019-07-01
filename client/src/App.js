@@ -6,6 +6,7 @@ import Wrapper from "./components/Wrapper";
 import "./App.css";
 import CreateProject from "./pages/CreateProject";
 import SourceCategory from "./pages/SourceCategory";
+import Inspiration from "./pages/Inspiration";
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
            <Route exact path="/userhome" component={UserHome} />
            <Route exact path="/createproject" component={CreateProject} />
            <Route exact path="/sourcecategory" component={SourceCategory} />
+           <Route exact path="/inspiration" component={Inspiration} />
 
          </Wrapper>
        </div>

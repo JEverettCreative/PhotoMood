@@ -4,7 +4,7 @@ import Button from "../components/Button";
 import Dummy from "../dummyaccount.json";
 import { ImageSourceCategory } from "../components/CategoryButtons";
 import BannerSmall from "../components/BannerSmall";
-import { Desktop, Tablet, Mobile, Default } from "../utils/mediaqueries";
+import { Desktop, Tablet } from "../utils/mediaqueries";
 
 class CreateProject extends Component {
 
