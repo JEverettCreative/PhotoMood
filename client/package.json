@@ -5,8 +5,10 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-modal": "^3.8.2",
     "react-responsive": "^7.0.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "^2.1.1"

@@ -4,16 +4,54 @@ import LandingHero from "../components/LandingHero";
 import { LandingInfo, LandingImage } from "../components/LandingBlocks";
 import LandingRow from "../components/LandingRow";
 import Button from "../components/Button";
+import Modal from "../components/ModalDOM";
+import ReactModal from "react-modal";
+ReactModal.setAppElement('#modal');
 
+const customStyles = {
+    content : {
+      top                   : '50%',
+      left                  : '50%',
+      right                 : 'auto',
+      bottom                : 'auto',
+      marginRight           : '-50%',
+      transform             : 'translate(-50%, -50%)'
+    }
+  };
 
 class Landing extends Component {
+
+    constructor () {
+        super();
+        this.state = {
+          showModal: false
+        };
+        
+        this.handleOpenModal = this.handleOpenModal.bind(this);
+        this.handleCloseModal = this.handleCloseModal.bind(this);
+      }
+
+    componentDidMount() {
+        console.log("Component mounted");
+    }
+
+    handleOpenModal () {
+        this.setState({ showModal: true });
+      }
+      
+      handleCloseModal () {
+        this.setState({ showModal: false });
+      }
+
+
     render () {
         return (
-            <>
+            <div>
             <NavBar>
-                <Button style={{ display: "inline" }}>
+                <Button style={{ display: "inline" }}
+                    onClick={this.handleOpenModal}>
                     Login
-                </Button>
+               </Button>
             </NavBar> 
             <LandingHero />
             <LandingRow>
@@ -49,12 +87,24 @@ class Landing extends Component {
                 </LandingImage>
             </LandingRow>
             <LandingRow style= {{ borderBottom: "none", height: 300 }}>
-                <Button style={{ margin: "auto" }}>
+                <Button style={{ margin: "auto" }}
+                    onClick={this.handleOpenModal}>
                     {/* Add onClick and reformat */}
                     Create Free Account
                 </Button>
             </LandingRow>
-            </>
+            <ReactModal 
+                isOpen={this.state.showModal}
+                contentLabel="onRequestClose Example"
+                onRequestClose={this.handleCloseModal}
+                style={customStyles}
+                contentLabel="Sign In Modal"
+                >
+                <h3>Sign In Using Google</h3>
+                <a class="btn" href="/auth/google">Google Sign-In</a>
+                <button onClick={this.handleCloseModal}>Close</button>
+            </ReactModal>
+            </div>
         )
     }
 }
