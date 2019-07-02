@@ -4,7 +4,6 @@ import LandingHero from "../components/LandingHero";
 import { LandingInfo, LandingImage } from "../components/LandingBlocks";
 import LandingRow from "../components/LandingRow";
 import Button from "../components/Button";
-import Modal from "../components/ModalDOM";
 import ReactModal from "react-modal";
 ReactModal.setAppElement('#modal');
 
@@ -95,7 +94,6 @@ class Landing extends Component {
             </LandingRow>
             <ReactModal 
                 isOpen={this.state.showModal}
-                contentLabel="onRequestClose Example"
                 onRequestClose={this.handleCloseModal}
                 style={customStyles}
                 contentLabel="Sign In Modal"
