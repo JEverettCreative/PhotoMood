@@ -101,7 +101,7 @@ class Landing extends Component {
                 contentLabel="Sign In Modal"
                 >
                 <h3>Sign In Using Google</h3>
-                <a class="btn" href="/auth/google">Google Sign-In</a>
+                <div class="g-signin2" data-onsuccess="onSignIn">Sign In</div>
                 <button onClick={this.handleCloseModal}>Close</button>
             </ReactModal>
             </div>

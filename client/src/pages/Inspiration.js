@@ -5,7 +5,7 @@ import Unsplash from "../utils/API/unsplash";
 class Inspiration extends Component {
 
     state = {
-        results: [],
+        results: {},
         error: ""
     };
 
@@ -36,18 +36,23 @@ class Inspiration extends Component {
 
 
     render() {
-        return (
-            <div>
-                <div className="jumbotron">
-                    Testing API
+        console.log(this.state.results);
+        if (this.state.results.urls) {
+            return (
+                <div>
+                    <div className="jumbotron">
+                        Testing API
+                    </div>
+                    <FedImage 
+                        handleNewPhoto = {this.handleNewPhoto}
+                        url = {this.state.results.urls.regular}
+                        credit = {this.state.results.user}
+                        />
                 </div>
-                <FedImage 
-                    handleNewPhoto = {this.handleNewPhoto}
-                    url = {JSON.stringify(this.state.results.urls)}
-                    credit = {JSON.stringify(this.state.results.user)}
-                    />
-            </div>
-        )
+            );
+        }
+        return null;
+       
     }
 }
 
