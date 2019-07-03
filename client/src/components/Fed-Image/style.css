@@ -1,4 +1,7 @@
 .fed-img {
     margin: 0 auto;
+}
+
+.fed-container {
     display: inline-block;
 }

@@ -5,6 +5,7 @@ import { LandingInfo, LandingImage } from "../components/LandingBlocks";
 import LandingRow from "../components/LandingRow";
 import Button from "../components/Button";
 import ReactModal from "react-modal";
+import queryString from "query-string";
 ReactModal.setAppElement('#modal');
 
 const customStyles = {
@@ -36,11 +37,19 @@ class Landing extends Component {
 
     handleOpenModal () {
         this.setState({ showModal: true });
-      }
-      
-      handleCloseModal () {
+    }
+
+    handleCloseModal () {
         this.setState({ showModal: false });
-      }
+    }
+
+    componentWillMount() {
+        var query = queryString.parse(this.props.location.search);
+        if (query.token) {
+            window.localStorage.setItem("jwt", query.token);
+            this.props.history.push("/");
+        }
+    }
 
 
     render () {
@@ -99,7 +108,7 @@ class Landing extends Component {
                 contentLabel="Sign In Modal"
                 >
                 <h3>Sign In Using Google</h3>
-                <div class="g-signin2" data-onsuccess="onSignIn">Sign In</div>
+                <a className="btn" href="/auth/google">Sign In with Google</a>
                 <button onClick={this.handleCloseModal}>Close</button>
             </ReactModal>
             </div>

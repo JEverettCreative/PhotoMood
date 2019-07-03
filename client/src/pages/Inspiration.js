@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import FedImage from "../components/Fed-Image";
 import Unsplash from "../utils/API/unsplash";
 import { StarButton, PassButton } from "../components/RoundButton";
+import NavBar from "../components/NavBar";
+import Button from "../components/Button";
+import { Link } from "react-router-dom";
 
 class Inspiration extends Component {
 
@@ -20,11 +23,25 @@ class Inspiration extends Component {
             this.setState({ results: res.data, error: "" });
         })
         .catch(err => this.setState({ error: err.message }));
-      }
+      }   
     
 
-    handleNewPhoto = event => {
+    handleStarButton = event => {
         event.preventDefault();
+        // Add code to save photo info to DB
+        Unsplash.getRandomPhoto()
+            .then(res => {
+                if (res.data.status === "error") {
+                    throw new Error(res.data.message);
+                }
+                this.setState({ results: res.data, error: "" })
+            })
+            .catch(err => this.setState({ error: err.message }));
+    };
+
+    handlePassButton = event => {
+        event.preventDefault();
+        // Add code to save photo info to DB
         Unsplash.getRandomPhoto()
             .then(res => {
                 if (res.data.status === "error") {
@@ -41,17 +58,29 @@ class Inspiration extends Component {
         if (this.state.results.urls) {
             return (
                 <div>
-                    <div className="jumbotron">
-                        Testing API
-                    </div>
+                    <NavBar>
+                        <Button style={{ display: "inline" }}>
+                            <Link style={{ color: "inherit" }}
+                                to="/userhome"
+                                className={
+                                    window.location.pathname === "/" || window.location.pathname === "/userhome"
+                                }
+                                >
+                                <span><i class="fas fa-user fa-lg"></i></span>
+                        </Link>
+                        </Button>
+                    </NavBar> 
                     <div className="container justify-content-center">
-                        <PassButton />
+                        <PassButton 
+                            handlePassButton = {this.handlePassButton}
+                            />
                         <FedImage 
-                            handleNewPhoto = {this.handleNewPhoto}
                             url = {this.state.results.urls.raw + "&fit=fill&fill=solid&fill-color=e9ecef&w=500&h=500"}
                             credit = {this.state.results.user}
                             />
-                        <StarButton />
+                        <StarButton 
+                            handleStarButton = {this.handleStarButton}
+                            />
                     </div>
                 </div>
             );
