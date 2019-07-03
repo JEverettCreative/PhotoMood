@@ -3,13 +3,15 @@ require('dotenv').config();
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
-const routes = "./routes";
-var passport = require("passport");
+const routes = require("./routes");
+const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 var cookieParser = require("cookie-parser");
 var cookieSession = require("cookie-session");
 
-var profile;
+const db = require("./models");
+
+const profile;
 
 
 // Define middleware here
@@ -65,7 +67,16 @@ passport.serializeUser(function(user, done) {
 // Add routes
 app.use(routes);
 
-// Define API routes here
+// Database sync options
+var syncOptions = {
+  force: false
+};
+
+// If running a test, set syncOptions.force to true
+// clearing the `testdb`
+if (process.env.NODE_ENV === "test") {
+  syncOptions.force = true;
+}
 
 // Send every other request to the React app
 // Define any API routes before this runs
@@ -73,6 +84,13 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-app.listen(PORT, () => {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
+// Connect to the MySQL Database and sync
+db.sequelize.sync(syncOptions).then(function() {
+  app.listen(PORT, function() {
+    console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      PORT,
+      PORT
+    );
+  });
 });
