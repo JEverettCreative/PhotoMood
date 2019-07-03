@@ -48,9 +48,9 @@ passport.serializeUser(function(user, done) {
  passport.use(
   new GoogleStrategy(
    {
-    clientID: "REACT_APP_GOOGLE_CLIENT_ID",
-    clientSecret: "REACT_APP_GOOGLE_CLIENT_SECRET",
-    callbackURL: "http://localhost:3000/auth/google/callback"
+    clientID: procees.env.REACT_APP_GOOGLE_CLIENT_ID,
+    clientSecret: process.env.REACT_APP_GOOGLE_CLIENT_SECRET,
+    callbackURL: process.env.REACT_APP_CALLBACK_URL
    },
    function(accessToken, refreshToken, profile, done) {
     var userData = {

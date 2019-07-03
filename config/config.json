@@ -4,7 +4,7 @@
 
     "password": "root",
 
-    "database": "camerashare_db",
+    "database": "photomood",
 
     "host": "localhost",
     "dialect": "mysql"

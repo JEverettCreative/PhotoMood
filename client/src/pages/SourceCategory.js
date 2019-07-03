@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Button from "../components/Button";
 import Dummy from "../dummyaccount.json";
@@ -18,9 +19,16 @@ class SourceCategory extends Component {
             <div>
                 <NavBar>
                     <Button style={{ display: "inline" }}>
-                        <span><i class="fas fa-user fa-lg"></i></span>
+                        <Link style={{ color: "inherit" }}
+                            to="/userhome"
+                            className={
+                                window.location.pathname === "/" || window.location.pathname === "/userhome"
+                            }
+                            >
+                            <span><i class="fas fa-user fa-lg"></i></span>
+                    </Link>
                     </Button>
-                </NavBar>
+                </NavBar> 
                 <div className="container-fluid">
                     <BannerSmall
                         heading="How would you like to start adding photos to your Mood?"

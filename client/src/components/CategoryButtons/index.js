@@ -3,9 +3,9 @@ import "./style.css";
 
 export function UserHomeCategory(props) {
     return (
-        <div className="w-50 text-center userhome-category">
+        <button className="w-50 text-center userhome-category" onClick={props.onClick}>
             <h2>{props.title}</h2>
-        </div>
+        </button>
     )
 }
 

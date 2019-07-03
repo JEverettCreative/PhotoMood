@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import LandingHero from "../components/LandingHero";
 import { LandingInfo, LandingImage } from "../components/LandingBlocks";
@@ -42,7 +43,7 @@ class Landing extends Component {
     handleCloseModal () {
         this.setState({ showModal: false });
     }
-
+    // Code for storing user token in Local Storage after sign-in
     componentWillMount() {
         var query = queryString.parse(this.props.location.search);
         if (query.token) {
@@ -56,10 +57,16 @@ class Landing extends Component {
         return (
             <div>
             <NavBar>
-                <Button style={{ display: "inline" }}
-                    onClick={this.handleOpenModal}>
-                    Login
-               </Button>
+                <Button style={{ display: "inline" }}>
+                    <Link style={{ color: "inherit" }}
+                        to="/userhome"
+                        className={
+                            window.location.pathname === "/" || window.location.pathname === "/userhome"
+                        }
+                        >
+                        <span><i class="fas fa-user fa-lg"></i></span>
+                </Link>
+                </Button>
             </NavBar> 
             <LandingHero />
             <LandingRow>
