@@ -11,7 +11,7 @@ var cookieSession = require("cookie-session");
 
 const db = require("./models");
 
-const profile;
+let profile;
 
 
 // Define middleware here
