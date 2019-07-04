@@ -8,7 +8,7 @@ import { SideTaskBarNew, FormListItem } from "../components/SideTaskBar";
 import { UserHomeCategory } from "../components/CategoryButtons";
 import ReactModal from "react-modal";
 import { Input, DropSelect, FormButton } from "../components/FormComponents";
-// import router from "../../../routes/api";
+import Database from "../utils/API/database";
 ReactModal.setAppElement('#modal');
 
 const customStyles = {
@@ -63,9 +63,15 @@ class UserHome extends Component {
         event.preventDefault();
         if(this.state.projectTitle && this.state.projectType) {
             console.log(this.state.projectTitle + " " + this.state.projectType);
+            Database.saveProject({
+                title: this.state.projectTitle,
+                category: this.state.projectType
+            })
+              .then(res => console.log("success?"))
+              .catch(err => console.log(err));
         }
         console.log("Didn't capture input");
-    }
+    };
 
     render () {
         return (
@@ -74,11 +80,11 @@ class UserHome extends Component {
                 <Button style={{ display: "inline" }}>
                     <Link style={{ color: "inherit" }}
                         to="/userhome"
-                        className={
-                            window.location.pathname === "/" || window.location.pathname === "/userhome"
-                        }
+                        // className={
+                        //     window.location.pathname === "/" || window.location.pathname === "/userhome"
+                        // }
                         >
-                        <span><i class="fas fa-user fa-lg"></i></span>
+                        <span><i className="fas fa-user fa-lg"></i></span>
                 </Link>
                 </Button>
             </NavBar> 
