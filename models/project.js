@@ -3,6 +3,7 @@ module.exports = function(sequelize, DataTypes) {
       title: 
       {
           type: DataTypes.STRING,
+          allowNull: false,
           validate: {
               notNull: true
           }
@@ -10,6 +11,7 @@ module.exports = function(sequelize, DataTypes) {
       category: 
       {
         type: DataTypes.STRING,
+        allowNull: false,
         validate: {
             notNull: true
         }
@@ -29,11 +31,11 @@ module.exports = function(sequelize, DataTypes) {
             }
         });
     };
-    Project.associate = function(models) {
-        Project.hasMany(models.SavedImages, {
-            onDelete: "cascade"
-        });
-    };
+    // Project.associate = function(models) {
+    //     Project.hasMany(models.SavedImages, {
+    //         onDelete: "cascade"
+    //     });
+    // };
     
     return Project;
   };

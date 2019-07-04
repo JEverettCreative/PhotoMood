@@ -60,11 +60,8 @@ class Landing extends Component {
                 <Button style={{ display: "inline" }}>
                     <Link style={{ color: "inherit" }}
                         to="/userhome"
-                        className={
-                            window.location.pathname === "/" || window.location.pathname === "/userhome"
-                        }
                         >
-                        <span><i class="fas fa-user fa-lg"></i></span>
+                        <span><i className="fas fa-user fa-lg"></i></span>
                 </Link>
                 </Button>
             </NavBar> 
