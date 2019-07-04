@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
               notNull: true
           }
       },
-      hash: DataTypes.STRING,
+      hashstring: DataTypes.STRING,
       avatar: DataTypes.STRING,
       activeAccount: 
         {

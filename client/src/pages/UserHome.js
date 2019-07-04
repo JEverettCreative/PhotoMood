@@ -7,6 +7,8 @@ import Dummy from "../dummyaccount.json";
 import { SideTaskBarNew, FormListItem } from "../components/SideTaskBar";
 import { UserHomeCategory } from "../components/CategoryButtons";
 import ReactModal from "react-modal";
+import { Input, DropSelect, FormButton } from "../components/FormComponents";
+// import router from "../../../routes/api";
 ReactModal.setAppElement('#modal');
 
 const customStyles = {
@@ -28,7 +30,9 @@ class UserHome extends Component {
         super();
         this.state = {
           showModal: false,
-          Dummy
+          Dummy,
+          projectTitle: "",
+          projectType: ""
         };
         
         this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -37,15 +41,32 @@ class UserHome extends Component {
 
     componentDidMount() {
         console.log("Component mounted");
-    }
+    };
 
     handleOpenModal () {
         this.setState({ showModal: true });
-    }
+    };
 
     handleCloseModal () {
         this.setState({ showModal: false });
+    };
+
+    // Handle input change and submission of modal info
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    };
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+        if(this.state.projectTitle && this.state.projectType) {
+            console.log(this.state.projectTitle + " " + this.state.projectType);
+        }
+        console.log("Didn't capture input");
     }
+
     render () {
         return (
         <div>
@@ -112,19 +133,25 @@ class UserHome extends Component {
                         >
                         <h3>Project Details</h3>
                         <form>
-                            <div class="form-group">
-                                <label for="Project Title" id="project-title">Project Title</label>
-                                <input type="text" class="form-control" id="project-title-input" />
-                            </div>
-                            <div class="form-group">
-                                <label for="project-type">Project Type</label>
-                                <select class="form-control" id="project-type-input">
-                                <option>Portrait</option>
-                                <option>Landscape</option>
-                                <option>Creative Concept</option>
-                                <option>Fashion</option>
-                                </select>
-                            </div>
+                            <Input  
+                                value={this.state.projectTitle}
+                                onChange={this.handleInputChange}
+                                name="projectTitle"
+                                label="Project Name"
+                            />
+                            <DropSelect 
+                                value={this.state.projectType} 
+                                onChange={this.handleInputChange}
+                                name="projectType"
+                                option1="Portrait"
+                                option2="Landscape"
+                                option3="Creative Concept"
+                                option4="Fashion"   
+                            />
+                            <FormButton
+                                onClick={this.handleFormSubmit}>
+                                Create Project
+                            </FormButton>
                         </form>
                         <button onClick={this.handleCloseModal}>Close</button>
                     </ReactModal>   
