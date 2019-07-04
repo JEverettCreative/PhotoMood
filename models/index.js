@@ -1,3 +1,5 @@
+// This branch will continue to persist with database information. For heroku
+// deployment, the master branch will be stripped of it in the short term
 "use strict";
 require("dotenv").config();
 const fs = require("fs");
