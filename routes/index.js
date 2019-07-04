@@ -1,6 +1,6 @@
 const path = require("path");
 const router = require("express").Router();
-import apiRoutes from "./api";
+const apiRoutes = require("./api/project");
 var passport = require("passport");
 
 // API Routes
