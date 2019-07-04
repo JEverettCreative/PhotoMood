@@ -9,7 +9,9 @@ const config = require("../config/config.json")[env];
 const db = {};
 
 if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
+  var sequelize = new Sequelize(process.env[config.use_env_variable], {
+    dialect: "mysql"
+  });
 } else {
   var sequelize = new Sequelize(
     config.database,
