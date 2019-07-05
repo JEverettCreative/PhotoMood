@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use(passport.initialize());
-require("./config/passport");
+// require("./config/passport");
 app.use(passport.session());
 
 app.use(
