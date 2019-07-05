@@ -84,6 +84,10 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
+
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+});
 // Connect to the MySQL Database and sync
 // db.sequelize.sync(syncOptions).then(function() {
 //   app.listen(PORT, function() {
