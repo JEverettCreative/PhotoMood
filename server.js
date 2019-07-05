@@ -65,7 +65,7 @@ passport.serializeUser(function(user, done) {
 
 
 // Add routes
-app.use(routes);
+// app.use(routes);
 
 // Database sync options
 var syncOptions = {
