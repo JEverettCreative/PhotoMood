@@ -48,7 +48,7 @@ passport.serializeUser(function(user, done) {
  passport.use(
   new GoogleStrategy(
    {
-    clientID: procees.env.REACT_APP_GOOGLE_CLIENT_ID,
+    clientID: process.env.REACT_APP_GOOGLE_CLIENT_ID,
     clientSecret: process.env.REACT_APP_GOOGLE_CLIENT_SECRET,
     callbackURL: process.env.REACT_APP_CALLBACK_URL
    },
