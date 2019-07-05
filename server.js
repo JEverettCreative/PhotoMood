@@ -3,7 +3,7 @@ require('dotenv').config();
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
-const routes = require("./routes");
+// const routes = require("./routes");
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 var cookieParser = require("cookie-parser");
