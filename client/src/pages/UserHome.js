@@ -59,19 +59,19 @@ class UserHome extends Component {
         });
     };
 
-    handleFormSubmit = event => {
-        event.preventDefault();
-        if(this.state.projectTitle && this.state.projectType) {
-            console.log(this.state.projectTitle + " " + this.state.projectType);
-            Database.saveProject({
-                title: this.state.projectTitle,
-                category: this.state.projectType
-            })
-              .then(res => console.log("success?"))
-              .catch(err => console.log(err));
-        }
-        console.log("Didn't capture input");
-    };
+    // handleFormSubmit = event => {
+    //     event.preventDefault();
+    //     if(this.state.projectTitle && this.state.projectType) {
+    //         console.log(this.state.projectTitle + " " + this.state.projectType);
+    //         Database.saveProject({
+    //             title: this.state.projectTitle,
+    //             category: this.state.projectType
+    //         })
+    //           .then(res => console.log("success?"))
+    //           .catch(err => console.log(err));
+    //     }
+    //     console.log("Didn't capture input");
+    // };
 
     render () {
         return (
@@ -155,7 +155,8 @@ class UserHome extends Component {
                                 option4="Fashion"   
                             />
                             <FormButton
-                                onClick={this.handleFormSubmit}>
+                                // onClick={this.handleFormSubmit}
+                                >
                                 Create Project
                             </FormButton>
                         </form>
