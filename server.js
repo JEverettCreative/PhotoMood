@@ -9,7 +9,7 @@ const GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
 var cookieParser = require("cookie-parser");
 var cookieSession = require("cookie-session");
 
-const db = require("./models");
+// const db = require("./models");
 
 let profile;
 
@@ -85,12 +85,12 @@ app.get("*", (req, res) => {
 });
 
 // Connect to the MySQL Database and sync
-db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
-  });
-});
+// db.sequelize.sync(syncOptions).then(function() {
+//   app.listen(PORT, function() {
+//     console.log(
+//       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+//       PORT,
+//       PORT
+//     );
+//   });
+// });
