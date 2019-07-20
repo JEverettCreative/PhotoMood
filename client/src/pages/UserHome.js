@@ -53,7 +53,8 @@ class UserHome extends Component {
 
     // Handle input change and submission of modal info
     handleInputChange = event => {
-        const { name, value } = event.target;
+        let value = event.target.value;
+        const name = event.target.name;
         this.setState({
             [name]: value
         });
@@ -61,7 +62,7 @@ class UserHome extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if(this.state.projectTitle && this.state.projectType) {
+        if(this.state.projectTitle) {
             console.log(this.state.projectTitle + " " + this.state.projectType);
             Database.saveProject({
                 title: this.state.projectTitle,
@@ -70,7 +71,9 @@ class UserHome extends Component {
               .then(res => console.log("success?"))
               .catch(err => console.log(err));
         }
-        console.log("Didn't capture input");
+        else {
+            console.log("Didn't capture input");
+        }       
     };
 
     render () {
